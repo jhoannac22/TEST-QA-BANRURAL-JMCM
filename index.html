@@ -67,7 +67,8 @@
 //diferencia de datos//
     if (parseInt (userGuess) === randomNumber) {
       //la funcion parseInt convierte una entra a numero
-      lastResult.textContent = '!!!Pérdistes!!!';
+      //confuncion en el mensaje//
+      lastResult.textContent = '!!!Has ganado!!!';
       lastResult.style.backgroundColor = 'black';
       lowOrHi.textContent = '';
       setGameOver();
