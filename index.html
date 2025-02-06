@@ -69,16 +69,16 @@
       //la funcion parseInt convierte una entra a numero
       //confuncion en el mensaje//
       lastResult.textContent = '!!!Has ganado!!!';
-      lastResult.style.backgroundColor = 'black';
+      lastResult.style.backgroundColor = 'green';
       lowOrHi.textContent = '';
       setGameOver();
     } else if(guessCount === ATTEMPS) {
       lastResult.textContent = 'Felicitaciones! adivinaste el número!';
-      lastResult.style.backgroundColor = 'red';
+      lastResult.style.backgroundColor = 'green';
       setGameOver();
     } else {
       lastResult.textContent = 'Incorrecto! ';
-      lastResult.style.backgroundColor = 'green';
+      lastResult.style.backgroundColor = 'red';
       if(userGuess < randomNumber) {
         lowOrHi.textContent = 'El número es mayor!';
       } else if(userGuess > randomNumber) {
@@ -90,7 +90,8 @@
     guessField.value = '';
     guessField.focus();
   }
-  guessSubmit.addeventListener('click', checkGuess);
+  //se agrego la letra e para el correcto funcionamiento de la funcion checkGuess
+  guessSubmit.addEventListener('click', checkGuess);
 
   function setGameOver() {
 	  guessField.disabled = true;
@@ -98,7 +99,7 @@
 	  resetButton = document.createElement('button');
 	  resetButton.textContent = 'Comienza un nuevo juego';
 	  document.body.appendChild(resetButton);
-	  resetButton.addeventListener('click', resetGame);
+	  resetButton.addEventListener('click', resetGame);
   }
 
   function resetGame() {
