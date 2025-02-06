@@ -41,7 +41,10 @@
 </body>
 
 <script>
-  let randomNumber = Math.random() * 10;
+  //genera un numero del 1 al 10 y en el juego se menciona que se utilizaran los numeros del 1 al 100//
+  let randomNumber = Math.floor(Math.random()*100) + 1;
+  //se implemento la funcion math.floor la cual se utiliza para obtener el numero mas cercano/
+
 
   const ATTEMPS = 5;
   const guesses = document.querySelector('.guesses');
